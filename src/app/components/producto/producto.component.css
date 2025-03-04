@@ -1,0 +1,118 @@
+/* Estilos globales para la página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Si tienes un header o título principal */
+  header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Contenedor principal para centrar el contenido */
+  .catalog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Estilos para el catálogo de productos */
+  .productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    padding: 0 10px;
+  }
+  
+  /* Estilo individual de cada producto */
+  .producto {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 12px;
+    width: 220px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  }
+  
+  /* Efecto hover para cada producto */
+  .producto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Estilo de la imagen del producto */
+  .producto img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  /* Título del producto */
+  .producto h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  /* Descripción del precio */
+  .producto p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  /* Estilo base para botones */
+  .button {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  /* Botón "Ir al Carrito" */
+  .ir-carrito-btn {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .ir-carrito-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+  }
+  
+  /* Botón "Ir al Catálogo" */
+  .ir-catalogo-btn {
+    background-color: #28a745; /* Verde */
+    color: #fff;
+  }
+  .ir-catalogo-btn:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
+  }
+  
+  /* Botón para descargar recibo (opcional) */
+  .download-btn {
+    background-color: #ffc107; /* Amarillo */
+    color: #333;
+  }
+  .download-btn:hover {
+    background-color: #e0a800;
+    transform: translateY(-3px);
+  }
+  
