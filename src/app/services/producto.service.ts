@@ -14,5 +14,7 @@ export class ProductoService {
   obtenerProducto():Producto[]{
      return this.productos;
   }
+
+  constructor(){}
   
 }
