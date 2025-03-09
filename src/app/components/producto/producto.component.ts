@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { Producto } from '../../models/producto';
 import { ProductoService } from '../../services/producto.service';
 import { CommonModule } from '@angular/common';
 import { CarritoService } from '../../services/carrito.service';
 import { Router } from '@angular/router';
+import { Producto } from '../../models/producto'; // Adjust the path
 
 @Component({
   selector: 'app-producto',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './producto.component.html',
-  styleUrls: ['./producto.component.css']  // Corregido 'styleUrl' a 'styleUrls'
+  styleUrls: ['./producto.component.css']
 })
-
 export class ProductoComponent implements OnInit {
-  productos: any[] = [];
+  productos: Producto[] = [];
+  loading: boolean = true;
 
   constructor(
     private productoService: ProductoService,
@@ -22,20 +23,25 @@ export class ProductoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Aquí puedes redirigir al carrito al cargar el componente, si es necesario
-    // this.router.navigate(['/carrito']);
-    
-    // Cargar los productos
-    this.productos = this.productoService.obtenerProducto();
+    this.productoService.obtenerProducto().subscribe({
+      next: (data) => {
+        this.productos = data;
+        this.loading = false;
+        console.log('Products loaded:', this.productos); // Debug log
+      },
+      error: (err) => {
+        console.error('Error fetching products:', err);
+        this.productos = [];
+        this.loading = false;
+      }
+    });
   }
 
-  agregarAlCarrito(producto: any): void {
-    // Agregar el producto al carrito
+  agregarAlCarrito(producto: Producto): void {
     this.carritoService.agregarProducto(producto);
   }
 
   irAlCarrito(): void {
-    // Redirigir al carrito cuando se llame a esta función
     this.router.navigate(['/carrito']);
   }
 }

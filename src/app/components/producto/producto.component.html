@@ -1,11 +1,18 @@
 <h2>Catálogo de productos</h2>
 
-<div class="productos">
-  <div *ngFor="let producto of productos" class="producto">
-    <img [src]="producto.imagen || 'ruta/a/imagen/default.jpg'" alt="{{producto.nombre}}">
-    <h3>{{producto.nombre}}</h3>
-    <p>Precio: ${{producto.precio}}</p>
+<div *ngIf="loading">
+  <p>Cargando productos...</p>
+</div>
 
+<div *ngIf="!loading && productos.length === 0">
+  <p>No se encontraron productos.</p>
+</div>
+
+<div class="productos" *ngIf="!loading">
+  <div *ngFor="let producto of productos" class="producto">
+    <h3>{{producto.nombre}}</h3>
+    <img [src]="producto.imagen" alt="{{producto.nombre}}" *ngIf="producto.imagen" style="max-width: 100px;"> <!-- Add image -->
+    <p>Precio: ${{producto.precio}}</p>
     <button (click)="agregarAlCarrito(producto)">
       Agregar al Carrito
     </button>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productos>
+  <producto>
+    <id>1</id>
+    <nombre>Jersey Chivas 24/25</nombre>
+    <precio>1500</precio>
+    <imagen>/assets/chivas.jpg</imagen>
+  </producto>
+  <producto>
+    <id>2</id>
+    <nombre>Balon Americano Junior</nombre>
+    <precio>1200</precio>
+    <imagen>/assets/americano.jpg</imagen>
+  </producto>
+  <producto>
+    <id>3</id>
+    <nombre>Jersey Cowboys Local</nombre>
+    <precio>3200</precio>
+    <imagen>/assets/vaqueros.jpg</imagen>
+  </producto>
+</productos>
